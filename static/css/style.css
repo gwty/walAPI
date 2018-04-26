@@ -26,19 +26,18 @@ body {
     margin-left: 2%;
     margin-right:2%;
     padding: 1%;
-
-    text-overflow: ellipsis;
+    
     word-wrap: normal;
-    overflow: hidden;
     border-radius: 20px;
     line-height: 1.5em;
     cursor: pointer;
+    overflow-y:scroll;
+    overflow-x: hidden;
 }
 
 
 .item:hover {
-    height:100%;
-    overflow:scroll;
+    box-shadow: 3px 3px 3px 8px #eee;
 }
 
 .image {
@@ -77,6 +76,7 @@ body {
     color : transparent;
     width:64px;
     height:64px;
+    cursor:pointer;
 }
 
 #search {
@@ -86,47 +86,23 @@ body {
     padding:5px;
 }
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    border-radius: 25px;
+#back {
+    font-size:2em;
+    box-shadow: 2px 2px 2px 4px #aaa;
+    margin-bottom:30px;
+    cursor:pointer;
 }
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; /* 5% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 95%; /* Could be more or less, depending on screen size */
-    display:inline-block;
-    
+#productDescription {
+margin-top:50px;
+width:50%;
+margin: 0 auto;
 }
 
-/* The Close Button */
-.close {
-    color: #eee;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
+#products{
+margin-bottom:50px;
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
-
 @media only screen and (max-width: 800px) {
     .item {
         height:100%;
@@ -138,14 +114,6 @@ body {
     }
     .bigimage {
         width:100%;
-        display:inline-block;
-    }
-    .modal-content {
-        background-color: #fefefe;
-        margin: 5% auto; /* 5% from the top and centered */
-        padding: 2px;
-        border: 1px solid #888;
-        width: 95%; /* Could be more or less, depending on screen size */
         display:inline-block;
     }
 }
