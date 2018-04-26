@@ -1,9 +1,17 @@
 $( document ).ready(function(){
+    
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+        if($("#search").val()!="")
+            getproducts($("#search").val());
+    }
+});
+
 $("#search_button").click( function() {
 getproducts($("#search").val());
 });
 $('body').overlayScrollbars({
-  className: "os-theme-dark"
+  className: "os-theme-dark"    // make scrollbars look good
 }); 
 });
 
@@ -35,6 +43,8 @@ function getproductdetails(div, item_id,i, search_string) {
       </div>
       `;
       div.append(item_html);
+      
+      // uses the product lookup API
       
       url = "/lookup/" + item_id;
       $.ajax({
@@ -96,6 +106,7 @@ url = "/search/" + search_string;
 }
 
 //uses the recommendations api
+
 function getproductrecommendations(item, search_string) {
 
 url = "/recommendations/" + item['itemId'];
